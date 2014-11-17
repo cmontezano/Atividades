@@ -20,7 +20,8 @@ if (TSession::getValue('logged'))
 {
     TTransaction::open('atividades');
     $member = Usuario::newFromLogin(TSession::getValue('login'));
-    if ($member->get_role()->mnemonico == 'OPERADOR')
+    
+    if ($member->papel->mnemonico == 'OPERADOR')
     {
         $content = file_get_contents("app/templates/{$template}/operador.html");
     }

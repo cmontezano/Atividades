@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<tnotebook id="0">
+		<class>TNotebook</class>
+		<name>notebook1</name>
+		<x>5</x>
+		<y>5</y>
+		<width>540</width>
+		<height>351</height>
+		<pages>
+			<tpanel id="1" tab="Users">
+				<tlabel>
+					<class></class>
+					<name></name>
+					<x></x>
+					<y></y>
+					<color></color>
+					<size></size>
+					<style></style>
+					<value></value>
+				</tlabel>
+				<tlabel>
+					<class></class>
+					<name></name>
+					<x></x>
+					<y></y>
+					<color></color>
+					<size></size>
+					<style></style>
+					<value></value>
+				</tlabel>
+			</tpanel>
+		</pages>
+	</tnotebook>
+</form>

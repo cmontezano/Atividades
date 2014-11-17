@@ -5,7 +5,6 @@ class Usuario extends TRecord
     const PRIMARYKEY = 'id';
     const IDPOLICY   = 'max';
     
-    
     /**
      * Autenticate the user
      * @param $login User login
@@ -16,7 +15,7 @@ class Usuario extends TRecord
         $user = self::newFromLogin($login);
         
         if ($user instanceof Usuario) {
-            if (isset($user->{'password'}) AND ($user->{'password'} == $password)) {
+            if (isset($user->{'senha'}) AND ($user->{'senha'} == $password)) {
                 return true;
             } else {
                 throw new Exception('Senha incorreta');
@@ -40,10 +39,10 @@ class Usuario extends TRecord
             return $objects[0];
         }
     }
-    
-    public function get_role()
+
+    public function get_papel()
     {
-        $role = new Papel($this->id_papel);
+        $role = new Papel($this->papel_id);
         return $role;
     }
 }
