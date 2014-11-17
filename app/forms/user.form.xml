@@ -101,6 +101,28 @@
                     <tip></tip>
                     <required></required>
                 </tentry>
+                <tseekbutton id="6">
+                    <class>TSeekButton</class>
+                    <name>papel_id</name>
+                    <database>atividades</database>
+                    <model>Papel</model>
+                    <display>mnemonico</display>
+                    <receiver>papel_label</receiver>
+                    <x>105</x>
+                    <y>155</y>
+                    <width>40</width>
+                    <editable>1</editable>
+                </tseekbutton>
+                <tlabel id="7">
+                    <class>TLabel</class>
+                    <name>papel_label</name>
+                    <x>20</x>
+                    <y>155</y>
+                    <color>#000000</color>
+                    <size>10</size>
+                    <style></style>
+                    <value>Papel</value>
+                </tlabel>
 			</tpanel>
 		</pages>
 	</tnotebook>

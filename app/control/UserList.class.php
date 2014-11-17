@@ -44,7 +44,7 @@ class UserList extends TStandardList
         $table->width = '100%';
         $this->form->add($table);
         
-        $table->addRowSet(new TLabel('Members'), '')->class='tformtitle';
+        $table->addRowSet(new TLabel('Usuários'), '')->class='tformtitle';
         
         // create the form fields
         $filter = new TEntry('name');
@@ -76,9 +76,9 @@ class UserList extends TStandardList
         $this->datagrid->setHeight(320);
 
         // creates the datagrid columns
-        $this->datagrid->addQuickColumn('Code', 'id', 'right', 50, new TAction(array($this, 'onReload')), array('order', 'id'));
+        $this->datagrid->addQuickColumn('ID', 'id', 'right', 50, new TAction(array($this, 'onReload')), array('order', 'id'));
         $this->datagrid->addQuickColumn('Nome', 'name', 'left', 200, new TAction(array($this, 'onReload')), array('order', 'name'));
-        $this->datagrid->addQuickColumn('Papel', 'papel_id', 'left', 100, new TAction(array($this, 'onReload')), array('order', 'email'));
+        $this->datagrid->addQuickColumn('Papel', 'papel_id', 'left', 100, new TAction(array($this, 'onReload')), array('order', 'papel_id'));
 
         // create the datagrid model
         $this->datagrid->createModel();

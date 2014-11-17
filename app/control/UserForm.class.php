@@ -37,6 +37,7 @@ class UserForm extends TPage
 			$ui->getWidget('name_label')->setValue('Nome');
 			$ui->getWidget('login_label')->setValue('Login');
 			$ui->getWidget('senha_label')->setValue('Senha');
+			$ui->getWidget('papel_label')->setValue('Papel');
 			$ui->getWidget('save_button')->setValue('Salvar');
 			
 			// get the interface widgets
