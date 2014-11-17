@@ -33,9 +33,33 @@ class UserForm extends TPage
 
 			// reads the xml form
 			$ui->parseFile('app/forms/user.form.xml');
+			$ui->getWidget('code_label')->setValue('Código');
+			$ui->getWidget('name_label')->setValue('Nome');
+			$ui->getWidget('login_label')->setValue('Login');
+			$ui->getWidget('senha_label')->setValue('Senha');
+			$ui->getWidget('save_button')->setValue('Salvar');
+			
+			// get the interface widgets
+			$fields = $ui->getWidgets();
+			
+			// look for the TDataGrid object
+			foreach ($fields as $name => $field) {
+			    if ($fields instanceof TDataGrid) {
+			        $this->datagrid = $field;
+			        $this->pageNavigation = $this->datagrid->getPageNavigation();
+			    }
+			}
+			
+			// add the TUIBuilder panel inside the TForm object
+			$this->form->add($ui);
+			// set form fields from interface fields
+			$this->form->setFields($ui->getFields());
 		} catch (Exception $e) {
-
+            new TMessage('error', $e->getMessage());
 		}
+		
+		// add the form to te page
+		parent::add($this->form);
 	}
 
 	public function onEdit($param)

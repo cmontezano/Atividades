@@ -6,30 +6,112 @@
 		<x>5</x>
 		<y>5</y>
 		<width>540</width>
-		<height>351</height>
+		<height>250</height>
 		<pages>
-			<tpanel id="1" tab="Users">
-				<tlabel>
-					<class></class>
-					<name></name>
-					<x></x>
-					<y></y>
-					<color></color>
-					<size></size>
+			<tpanel id="1" tab="Usuários">
+				<tlabel id="0">
+					<class>TLabel</class>
+					<name>code_label</name>
+					<x>20</x>
+					<y>20</y>
+					<color>#000000</color>
+					<size>10</size>
 					<style></style>
-					<value></value>
+					<value>Código</value>
 				</tlabel>
-				<tlabel>
-					<class></class>
-					<name></name>
-					<x></x>
-					<y></y>
-					<color></color>
-					<size></size>
-					<style></style>
+				<tlabel id="1">
+					<class>TEntry</class>
+					<name>id</name>
+					<x>105</x>
+					<y>15</y>
 					<value></value>
+					<mask></mask>
+					<width>75</width>
+					<maxlen>0</maxlen>
+					<editable>0</editable>
+					<tip></tip>
+					<required></required>
 				</tlabel>
+				<tlabel id="2">
+                    <class>TLabel</class>
+                    <name>name_label</name>
+                    <x>20</x>
+                    <y>55</y>
+                    <color>#000000</color>
+                    <size>10</size>
+                    <style></style>
+                    <value>Nome</value>
+                </tlabel>
+                <tentry id="3">
+                    <class>TEntry</class>
+                    <name>name</name>
+                    <x>105</x>
+                    <y>50</y>
+                    <value></value>
+                    <mask></mask>
+                    <width>370</width>
+                    <maxlen>0</maxlen>
+                    <editable>1</editable>
+                    <tip></tip>
+                    <required></required>
+                </tentry>
+                <tlabel id="4">
+                    <class>TLabel</class>
+                    <name>login_label</name>
+                    <x>20</x>
+                    <y>90</y>
+                    <color>#000000</color>
+                    <size>10</size>
+                    <style></style>
+                    <value>Login</value>
+                </tlabel>
+                <tentry id="5">
+                    <class>TEntry</class>
+                    <name>login</name>
+                    <x>105</x>
+                    <y>85</y>
+                    <value></value>
+                    <mask></mask>
+                    <width>370</width>
+                    <maxlen>20</maxlen>
+                    <editable>1</editable>
+                    <tip></tip>
+                    <required></required>
+                </tentry>
+                <tlabel id="6">
+                    <class>TLabel</class>
+                    <name>senha_label</name>
+                    <x>20</x>
+                    <y>125</y>
+                    <color>#000000</color>
+                    <size>10</size>
+                    <style></style>
+                    <value>Senha</value>
+                </tlabel>
+                <tentry id="7">
+                    <class>TEntry</class>
+                    <name>senha</name>
+                    <x>105</x>
+                    <y>120</y>
+                    <value></value>
+                    <mask></mask>
+                    <width>370</width>
+                    <maxlen>20</maxlen>
+                    <editable>1</editable>
+                    <tip></tip>
+                    <required></required>
+                </tentry>
 			</tpanel>
 		</pages>
 	</tnotebook>
+	<tbutton id="1">
+	    <class>TButton</class>
+	    <name>save_button</name>
+	    <x>10</x>
+	    <y>260</y>
+	    <value>Salvar</value>
+	    <icon>ico_save.png</icon>
+	    <action>onSave</action>
+	    <template>save.php</template>
+	</tbutton>
 </form>
