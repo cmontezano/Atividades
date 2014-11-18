@@ -6,32 +6,26 @@ class ProjectList extends TPage
     private $pageNavigation;
     private $loaded;
     
-    public function __construc()
+    public function __construct()
     {
-        parent::__construct;
-        
+        parent::__construct();
+
         if (TSession::getValue('logged') !== true) {
             throw new Exception('Não está logado');
         }
-        
+
         TTransaction::open('atividades');
         if (Usuario::newFromLogin(TSession::getValue('login'))->papel->mnemonico !== 'OPERADOR') {
             throw new Exception('Permissão negada');
         }
         TTransaction::close();
-        
-        // defines the database
-        parent::setDatabase('atividades');
-        
-        // defines the active record
-        parent::setActiveRecord('Projeto');
-        
+                
         $this->form = new TForm('form_search_Project');
         $this->form->clas = 'tform';
         
         $table = new TTable();
         $table->width = '100%';
-        
+
         $table->addRowSet(new TLabel('Projetos'), '')->class = 'tformtitle';
         
         $this->form->add($table);
@@ -39,7 +33,7 @@ class ProjectList extends TPage
         $titulo = new TEntry('titulo');
         
         $row = $table->addRow();
-        $row->addCell(new TLabel('Título') . ': ');
+        $row->addCell(new TLabel('Título'));
         
         // create two action buttons to the form
         $find_button = new TButton('find');
@@ -48,7 +42,7 @@ class ProjectList extends TPage
         $find_button->setAction(new TAction(array($this, 'onSearch')), 'Buscar');
         $find_button->setImage('ico_find.png');
         
-        $new_button->setAction(new TAction(array('BookForm', 'onEdit')), 'Novo');
+        $new_button->setAction(new TAction(array('ProjectForm', 'onEdit')), 'Novo');
         $new_button->setImage('ico_new.png');
         
         $table->addRowSet('', array($find_button, $new_button))->class = 'tformaction';
@@ -89,14 +83,13 @@ class ProjectList extends TPage
         $this->datagrid->addColumn($solicitante);
         
         // creates two datagrid actions
-        $action1 = new TDataGridAction(array('ProjetoForm', 'onEdit'));
+        $action1 = new TDataGridAction(array('ProjectForm', 'onEdit'));
         $action1->setLabel('Editar');
         $action1->setImage('ico_edit.png');
         $action1->setField('id');
         
         // add the actions to the datagrid
         $this->datagrid->addAction($action1);
-        $this->datagrid->addAction($action2);
         
         // create the datagrid model
         $this->datagrid->createModel();
@@ -113,5 +106,15 @@ class ProjectList extends TPage
         $container->add($this->pageNavigation);
         // add the vbox inside the page
         parent::add($container);
+    }
+
+    public function onSearch()
+    {
+        //
+    }
+
+    public function onReload()
+    {
+        //
     }
 }
