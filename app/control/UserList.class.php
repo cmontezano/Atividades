@@ -44,7 +44,7 @@ class UserList extends TStandardList
         $table->width = '100%';
         $this->form->add($table);
         
-        $table->addRowSet(new TLabel('Usuários'), '')->class='tformtitle';
+        $table->addRowSet(new TLabel('Usuários'), '')->class = 'tformtitle';
         
         // create the form fields
         $filter = new TEntry('name');
