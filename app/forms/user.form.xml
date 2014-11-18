@@ -101,12 +101,17 @@
                     <tip></tip>
                     <required></required>
                 </tentry>
+<<<<<<< HEAD
                 <tseekbutton id="6">
+=======
+                <tseekbutton id="8">
+>>>>>>> 42a3d7afbe20da5b4af592d04b073674d3efab47
                     <class>TSeekButton</class>
                     <name>papel_id</name>
                     <database>atividades</database>
                     <model>Papel</model>
                     <display>mnemonico</display>
+<<<<<<< HEAD
                     <receiver>papel_label</receiver>
                     <x>105</x>
                     <y>155</y>
@@ -114,6 +119,15 @@
                     <editable>1</editable>
                 </tseekbutton>
                 <tlabel id="7">
+=======
+                    <receiver>papel_name</receiver>
+                    <x>105</x>
+                    <y>150</y>
+                    <width>40</width>
+                    <editable>1</editable>
+                </tseekbutton>
+                <tlabel id="9">
+>>>>>>> 42a3d7afbe20da5b4af592d04b073674d3efab47
                     <class>TLabel</class>
                     <name>papel_label</name>
                     <x>20</x>
