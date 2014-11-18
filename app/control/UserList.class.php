@@ -78,11 +78,7 @@ class UserList extends TStandardList
         // creates the datagrid columns
         $this->datagrid->addQuickColumn('ID', 'id', 'right', 50, new TAction(array($this, 'onReload')), array('order', 'id'));
         $this->datagrid->addQuickColumn('Nome', 'name', 'left', 200, new TAction(array($this, 'onReload')), array('order', 'name'));
-<<<<<<< HEAD
-        $this->datagrid->addQuickColumn('Papel', 'papel_id', 'left', 100, new TAction(array($this, 'onReload')), array('order', 'papel_id'));
-=======
         $this->datagrid->addQuickColumn('Papel', 'papel_id', 'left', 100, new TAction(array($this, 'onReload')), array('order', 'papel'));
->>>>>>> 42a3d7afbe20da5b4af592d04b073674d3efab47
 
         // create the datagrid model
         $this->datagrid->createModel();
