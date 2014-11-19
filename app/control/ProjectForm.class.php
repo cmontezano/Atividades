@@ -33,12 +33,12 @@ class ProjectForm extends TPage
         
         $this->form->add($notebook);
         
-        $id = new TEntry('id');
-        $titulo = new TEntry('titulo');
-        $descricao = new TText('descricao');
-        $data_inicio = new TDate('data_inicio');
+        $id               = new TEntry('id');
+        $titulo           = new TEntry('titulo');
+        $descricao        = new TText('descricao');
+        $data_inicio      = new TDate('data_inicio');
         $previsao_termino = new TDate('previsao_termino');
-        $solicitante = new TEntry('solicitante');
+        $solicitante      = new TEntry('solicitante');
         
         // define the sizes
         $id->setSize(100);
@@ -91,7 +91,7 @@ class ProjectForm extends TPage
         $titulo_atividade           = new TEntry('titulo_atividade');
         $descricao_atividade        = new TText('descricao_atividade');
         $usuario_id                 = new TSeekButton('usuario_id');
-        $usuario_name               = new TEntry('name');
+        $usuario_name               = new TEntry('usuario_name');
         $previsao_termino_atividade = new TDate('previsao_termino_atividade');
         
         $atividade_id->setEditable(false);
@@ -102,20 +102,19 @@ class ProjectForm extends TPage
         $action = new TAction(array($obj, 'onSetup'));
         $action->setParameter('database',      'atividades');
         $action->setParameter('parent',        'form_Project');
-        $action->setParameter('model',         'Atividade');
+        $action->setParameter('model',         'Usuario');
         $action->setParameter('display_field', 'name');
-        $action->setParameter('receive_key',   'atividades_list_id');
-        $action->setParameter('receive_field', 'atividades_list_name');
+        $action->setParameter('receive_key',   'usuario_id');
+        $action->setParameter('receive_field', 'usuario_name');
         $usuario_id->setAction($action);
         
-        $atividades->setHeight(500);
+        $atividades->setHeight(200);
         $atividades->setClass('Atividade');
         
         $atividades->addField('id', 'Atividade', $atividade_id, 50);
         $atividades->addField('usuario_id', 'Usuário', $usuario_id, 50);
-        $atividades->addField('usuario_name', 'Nome', $usuario_name, 400);
-        $atividades->addField('titulo_atividade', 'Título', $titulo_atividade, 400);
-        $atividades->addField('descricao_atividade', 'Descrição', $descricao_atividade, 400);
+        $atividades->addField('usuario_name', 'Nome', $usuario_name, 165);
+        $atividades->addField('titulo_atividade', 'Título', $titulo_atividade, 165);
         $atividades->addField('previsao_termino', 'Término previsto', $previsao_termino_atividade, 150);
         
         $row = $table2->addRow();
@@ -137,7 +136,7 @@ class ProjectForm extends TPage
 
         // define wich are the form fields
         $this->form->setFields(array($id, $titulo, $descricao, $data_inicio, $previsao_termino, $solicitante, $atividades,
-                                     $titulo_atividade, $descricao_atividade, $previsao_termino_atividade, $usuario_id, 
+                                     $titulo_atividade, $previsao_termino_atividade, $usuario_id, 
                                      $usuario_name, $save_button));
 
         // add the form to the page
